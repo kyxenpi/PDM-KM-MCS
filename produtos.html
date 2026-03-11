@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pontinhos da Manu - Produtos</title>
+
+<link rel="stylesheet" href="produtos.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="transicao" id="transicao"></div>
+
+<header class="topo">
+
+<h1>Pontinhos da Manu</h1>
+<p>Peças de crochê feitas à mão</p>
+
+<nav class="menu">
+<a href="#produtos">Produtos</a>
+<a href="#avaliacoes">Avaliações</a>
+<a href="#contato">Contato</a>
+</nav>
+
+</header>
+
+
+<section class="produtos" id="produtos">
+
+<div class="produto">
+
+<img src="https://via.placeholder.com/300"
+onerror="this.src='https://via.placeholder.com/300?text=Sem+Imagem'">
+
+<h3>Exemplo de Produto</h3>
+
+<p>Descrição do produto artesanal.</p>
+
+<span class="preco">R$ 45,00</span>
+
+<button onclick="comprar('Exemplo de Produto',45)">
+Comprar
+</button>
+
+</div>
+
+<div class="produto">
+
+<img src="https://via.placeholder.com/300"
+onerror="this.src='https://via.placeholder.com/300?text=Sem+Imagem'">
+
+<h3>Exemplo de Produto</h3>
+
+<p>Descrição do produto artesanal.</p>
+
+<span class="preco">R$ 70,00</span>
+
+<button onclick="comprar('Exemplo de Produto',70)">
+Comprar
+</button>
+
+</div>
+
+<div class="produto">
+
+<img src="https://via.placeholder.com/300"
+onerror="this.src='https://via.placeholder.com/300?text=Sem+Imagem'">
+
+<h3>Exemplo de Produto</h3>
+
+<p>Descrição do produto artesanal.</p>
+
+<span class="preco">R$ 25,00</span>
+
+<button onclick="comprar('Exemplo de Produto',25)">
+Comprar
+</button>
+
+</div>
+
+</section>
+
+
+<section class="frete">
+
+<h2>Calcular Frete</h2>
+
+<div class="frete-box">
+
+<input
+type="text"
+id="cep"
+placeholder="Digite seu CEP"
+maxlength="9"
+>
+
+<button onclick="calcularFrete()">
+Calcular
+</button>
+
+</div>
+
+<p id="frete-resultado"></p>
+
+</section>
+
+
+<section class="avaliacoes" id="avaliacoes">
+
+<h2>Avaliações</h2>
+
+<div class="avaliacoes-grid">
+
+<div class="avaliacao">
+<p>"Produto lindo e bem feito."</p>
+<span>★★★★★</span>
+<strong>Cliente Exemplo</strong>
+</div>
+
+<div class="avaliacao">
+<p>"Entrega rápida e ótimo acabamento."</p>
+<span>★★★★★</span>
+<strong>Cliente Exemplo</strong>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="instagram">
+
+<h2>Instagram</h2>
+
+<p>Veja mais peças e novidades.</p>
+
+<a class="btn-instagram"
+href="https://instagram.com"
+target="_blank">
+
+<i class="fa-brands fa-instagram"></i>
+Abrir Instagram
+
+</a>
+
+</section>
+
+
+<section class="contato" id="contato">
+
+<h2>Contato</h2>
+
+<p>Faça seu pedido ou encomenda.</p>
+
+<div class="links-contato">
+
+<a href="#">WhatsApp</a>
+<a href="#">Instagram</a>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<p>© 2026 Pontinhos da Manu</p>
+
+<p>
+Desenvolvido por
+<a href="https://github.com/kmdev-cmd"
+target="_blank"
+rel="noopener noreferrer">
+kmdev
+</a>
+</p>
+
+</footer>
+
+<script src="produtos.js"></script>
+
+</body>
+</html>
