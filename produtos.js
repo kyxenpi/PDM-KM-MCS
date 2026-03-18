@@ -49,6 +49,8 @@ Prazo: 5-8 dias`;
   }
 }
 
+document.getElementById("btn-frete").addEventListener("click", calcularFrete);
+
 const imagens = document.querySelectorAll(".produto img");
 
 /* cria lightbox */
