@@ -110,9 +110,10 @@ window.addEventListener("scroll", () => {
 
 topo.onclick = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
-const cartIcon = document.querySelector(".carrinho-icon");
+const cartIcon = document.getElementById("abrir-carrinho");
 const carrinho = document.getElementById("carrinho");
 const fechar = document.getElementById("fechar-carrinho");
+const overlay = document.getElementById("overlay");
 
 const cartItems = document.getElementById("cart-items");
 const cartCount = document.getElementById("cart-count");
@@ -123,12 +124,22 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 /* abrir carrinho */
 
-cartIcon.onclick = () => {
+function toggleCart() {
   carrinho.classList.toggle("ativo");
-};
+  overlay.classList.toggle("ativo");
+}
+
+cartIcon.onclick = toggleCart;
 
 fechar.onclick = () => {
   carrinho.classList.remove("ativo");
+  overlay.classList.remove("ativo");
+};
+
+/* clicar fora fecha */
+overlay.onclick = () => {
+  carrinho.classList.remove("ativo");
+  overlay.classList.remove("ativo");
 };
 
 /* adicionar produto */
@@ -256,4 +267,12 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll(".produto").forEach((el) => {
   observer.observe(el);
+});
+
+/* ESC fecha */
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    carrinho.classList.remove("ativo");
+    overlay.classList.remove("ativo");
+  }
 });
