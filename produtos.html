@@ -1,9 +1,10 @@
 <!doctype html>
 <html lang="pt-BR">
     <head>
-        <link rel="icon" type="image/png" href="src/icon.png" />
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Pontinhos da Manu - Produtos</title>
+        <link rel="icon" type="image/png" href="src/icon.png" />
         <meta
             name="description"
             content="Peças de crochê feitas à mão. Amigurumi, bonecos e presentes artesanais."
@@ -12,17 +13,12 @@
             name="keywords"
             content="crochê, amigurumi, artesanal, feito a mão"
         />
-
-        <title>Pontinhos da Manu - Produtos</title>
-
         <link rel="stylesheet" href="produtos.css" />
-
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         />
     </head>
-
     <body>
         <div class="transicao" id="transicao"></div>
 
@@ -48,18 +44,15 @@
                 <img
                     loading="lazy"
                     src="src/gb.jpeg"
+                    data-full="src/gb.jpeg"
                     onerror="
                         this.src =
                             'https://via.placeholder.com/300?text=Sem+Imagem'
                     "
                 />
-
-                <h3>Gato Bola</h3>
-
-                <p>Gato bola de crochê.</p>
-
-                <span class="preco">R$ 100,00</span>
-
+                <h3>Gato bola</h3>
+                <p>8 cm de altura, 10 cm de largura</p>
+                <span class="preco">R$ 40,00</span>
                 <button>Adicionar ao carrinho</button>
             </div>
 
@@ -67,25 +60,53 @@
                 <img
                     loading="lazy"
                     src="src/up.jpeg"
+                    data-full="src/up.jpeg"
                     onerror="
                         this.src =
                             'https://via.placeholder.com/300?text=Sem+Imagem'
                     "
                 />
-
                 <h3>Ursinho de crochê</h3>
+                <p>12,5 cm</p>
+                <span class="preco">R$ 40,00</span>
+                <button>Adicionar ao carrinho</button>
+            </div>
 
-                <p>Urso de crochê.</p>
+            <div class="produto">
+                <img
+                    loading="lazy"
+                    src="src/Duck.jpeg"
+                    data-full="src/Duck.jpeg"
+                    onerror="
+                        this.src =
+                            'https://via.placeholder.com/300?text=Sem+Imagem'
+                    "
+                />
+                <h3>Chaveiro de patinho</h3>
+                <p>8 cm</p>
+                <span class="preco">R$ 25,00</span>
+                <button>Adicionar ao carrinho</button>
+            </div>
 
-                <span class="preco">R$ 120,00</span>
-
+            <div class="produto">
+                <img
+                    loading="lazy"
+                    src="src/snoopy.jpeg"
+                    data-full="src/snoopy.jpeg"
+                    onerror="
+                        this.src =
+                            'https://via.placeholder.com/300?text=Sem+Imagem'
+                    "
+                />
+                <h3>Snoopy</h3>
+                <p>8,5 cm</p>
+                <span class="preco">R$ 30,00</span>
                 <button>Adicionar ao carrinho</button>
             </div>
         </section>
 
         <section class="frete">
             <h2>Calcular Frete</h2>
-
             <div class="frete-box">
                 <input
                     type="text"
@@ -93,23 +114,19 @@
                     placeholder="Digite seu CEP"
                     maxlength="9"
                 />
-
-                <button onclick="calcularFrete()">Calcular</button>
+                <button id="btn-frete">Calcular</button>
             </div>
-
             <p id="frete-resultado"></p>
         </section>
 
         <section class="avaliacoes" id="avaliacoes">
             <h2>Avaliações</h2>
-
             <div class="avaliacoes-grid">
                 <div class="avaliacao">
                     <p>"Produto lindo e bem feito."</p>
                     <span>★★★★★</span>
                     <strong>Cliente</strong>
                 </div>
-
                 <div class="avaliacao">
                     <p>"Entrega rápida e ótimo acabamento."</p>
                     <span>★★★★★</span>
@@ -120,31 +137,26 @@
 
         <section class="instagram">
             <h2>Instagram</h2>
-
             <p>Veja mais peças e novidades.</p>
-
             <a
                 class="btn-instagram"
                 href="https://www.instagram.com/pontinhosda_manu?igsh=MW0zdXdidGhiMHlrYQ=="
                 target="_blank"
             >
-                <i class="fa-brands fa-instagram"></i>
-                Abrir Instagram
+                <i class="fa-brands fa-instagram"></i> Abrir Instagram
             </a>
         </section>
 
         <footer>
             <p>© 2026 Pontinhos da Manu</p>
-
             <p>
                 Desenvolvido por
                 <a
                     href="https://github.com/kmdev-cmd"
                     target="_blank"
                     rel="noopener noreferrer"
+                    >kmdev</a
                 >
-                    kmdev
-                </a>
             </p>
         </footer>
 
@@ -152,14 +164,13 @@
 
         <div class="carrinho" id="carrinho">
             <h2>Carrinho</h2>
-
             <div id="cart-items"></div>
-
             <p class="total">Total: R$ <span id="cart-total">0</span></p>
-
             <button id="finalizar">Finalizar pedido</button>
             <button id="fechar-carrinho">Fechar</button>
         </div>
+
+        <div class="lightbox" id="lightbox"><img src="" alt="Produto" /></div>
 
         <script src="produtos.js"></script>
     </body>

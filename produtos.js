@@ -235,17 +235,11 @@ finalizar.onclick = () => {
 
   let mensagem = "Olá! Gostaria de fazer um pedido:%0A%0A";
 
-  let total = 0;
-
   cart.forEach((item) => {
     mensagem += `${item.nome} x${item.qtd} - R$ ${(item.preco * item.qtd).toFixed(2)}%0A`;
-
-    total += item.preco * item.qtd;
   });
 
-  mensagem += `%0ATotal: R$ ${total.toFixed(2)}`;
-
-  const url = `https://wa.me/5511999999999?text=${mensagem}`;
+  const url = `https://wa.me/5513981846888?text=${mensagem}`;
 
   window.open(url, "_blank");
 };
