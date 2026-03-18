@@ -39,8 +39,7 @@ async function calcularFrete() {
     const frete = (Math.random() * 20 + 10).toFixed(2);
 
     resultado.innerHTML = `Entrega para ${dados.localidade} - ${dados.uf}<br>
-Frete estimado: R$ ${frete}<br>
-Prazo: 5-8 dias`;
+Frete estimado: R$ ${frete}<br>`;
 
     resultado.style.display = "inline-block";
   } catch {
