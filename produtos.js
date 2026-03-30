@@ -149,11 +149,20 @@ document.querySelectorAll(".produto button").forEach((btn) => {
   btn.addEventListener("click", () => {
     const nome = btn.parentElement.querySelector("h3").innerText;
 
-    const preco = btn.parentElement
-      .querySelector(".preco")
-      .innerText.replace("R$", "")
-      .replace(",", ".")
-      .trim();
+    let preco;
+
+    const select = btn.parentElement.querySelector(".variacao");
+
+    if (select) {
+      preco = parseFloat(select.value);
+    } else {
+      preco = parseFloat(
+        btn.parentElement
+          .querySelector(".preco")
+          .innerText.replace("R$", "")
+          .replace(",", "."),
+      );
+    }
 
     const existente = cart.find((p) => p.nome === nome);
 
@@ -277,3 +286,104 @@ document.addEventListener("keydown", (e) => {
     overlay.classList.remove("ativo");
   }
 });
+
+document.querySelectorAll(".produto").forEach((produto) => {
+  const imagens = JSON.parse(produto.dataset.images || "[]");
+  const container = produto.querySelector(".miniaturas");
+  const principal = produto.querySelector("img");
+
+  if (imagens.length > 1) {
+    imagens.forEach((src) => {
+      const thumb = document.createElement("img");
+      thumb.src = src;
+
+      thumb.onclick = () => {
+        principal.src = src;
+      };
+
+      container.appendChild(thumb);
+    });
+  }
+});
+
+const galeria = document.getElementById("galeria");
+
+document.querySelectorAll(".produto").forEach((produto) => {
+  let imagens = [];
+
+  if (produto.dataset.images) {
+    imagens = JSON.parse(produto.dataset.images);
+  } else {
+    const img = produto.querySelector("img");
+    if (img) imagens.push(img.src);
+  }
+
+  imagens.forEach((src) => {
+    const img = document.createElement("img");
+    img.src = src;
+
+    img.onclick = () => {
+      document.querySelector(".lightbox img").src = src;
+      document.querySelector(".lightbox").classList.add("ativo");
+    };
+
+    galeria.appendChild(img);
+  });
+});
+
+const btnProdutos = document.getElementById("btn-produtos");
+const btnGaleria = document.getElementById("btn-galeria");
+
+const secaoProdutos = document.getElementById("secao-produtos");
+const secaoGaleria = document.getElementById("secao-galeria");
+
+const buscaInput = document.getElementById("busca");
+
+/* mostrar produtos */
+btnProdutos.onclick = () => {
+  secaoProdutos.style.display = "block";
+  secaoGaleria.style.display = "none";
+
+  buscaInput.style.display = "inline-block"; // mostra busca
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  const galeria = document.getElementById("galeria");
+
+  if (!galeria) return;
+
+  galeria.innerHTML = ""; // garante que não duplica
+
+  document.querySelectorAll(".produto").forEach((produto) => {
+    let imagens = [];
+
+    if (produto.dataset.images) {
+      try {
+        imagens = JSON.parse(produto.dataset.images);
+      } catch {
+        imagens = [];
+      }
+    } else {
+      const img = produto.querySelector("img");
+      if (img) imagens.push(img.src);
+    }
+
+    imagens.forEach((src) => {
+      const img = document.createElement("img");
+      img.src = src;
+
+      img.onclick = () => {
+        document.querySelector(".lightbox img").src = src;
+        document.querySelector(".lightbox").classList.add("ativo");
+      };
+
+      galeria.appendChild(img);
+    });
+  });
+});
+
+btnGaleria.onclick = () => {
+  secaoProdutos.style.display = "none";
+  secaoGaleria.style.display = "block";
+  buscaInput.style.display = "none";
+};
