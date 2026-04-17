@@ -1,222 +1,226 @@
 <!doctype html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Pontinhos da Manu - Produtos</title>
-        <link rel="icon" type="image/png" href="src/icon.png" />
-        <meta
-            name="description"
-            content="Peças de crochê feitas à mão. Amigurumi, bonecos e presentes artesanais."
-        />
-        <meta
-            name="keywords"
-            content="crochê, amigurumi, artesanal, feito a mão"
-        />
-        <link rel="stylesheet" href="produtos.css" />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        />
-    </head>
-    <body>
-        <div class="transicao" id="transicao"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pontinhos da Manu - Produtos</title>
+    <link rel="icon" type="image/png" href="src/icon.png" />
+    <meta
+      name="description"
+      content="Peças de crochê feitas à mão. Amigurumi, bonecos e presentes artesanais."
+    />
+    <meta name="keywords" content="crochê, amigurumi, artesanal, feito a mão" />
+    <link rel="stylesheet" href="produtos.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="transicao" id="transicao"></div>
 
-        <header class="topo">
-            <h1>Pontinhos da Manu</h1>
-            <p>Peças de crochê feitas à mão</p>
+    <header class="topo">
+      <h1>Pontinhos da Manu</h1>
+      <p>Peças de crochê feitas à mão</p>
 
-            <nav class="menu">
-                <button id="btn-produtos">Produtos</button>
-                <button id="btn-galeria">Galeria</button>
-            </nav>
+      <nav class="menu">
+        <button id="btn-produtos">Produtos</button>
+        <button id="btn-galeria">Galeria</button>
+      </nav>
 
-            <div class="carrinho-icon" id="abrir-carrinho">
-                <i class="fa-solid fa-cart-shopping"></i>
-                <span id="cart-count">0</span>
-            </div>
+      <div class="carrinho-icon" id="abrir-carrinho">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span id="cart-count">0</span>
+      </div>
 
-            <input id="busca" placeholder="Buscar produto..." />
-        </header>
+      <input id="busca" placeholder="Buscar produto..." />
+    </header>
 
-        <div class="carrinho-overlay" id="overlay"></div>
+    <div class="carrinho-overlay" id="overlay"></div>
 
-        <div id="secao-galeria">
-            <section class="galeria">
-                <h2>Galeria de peças</h2>
-                <div class="galeria-grid" id="galeria"></div>
-            </section>
+    <div id="secao-galeria">
+      <section class="galeria">
+        <h2>Galeria de peças</h2>
+        <div class="galeria-grid" id="galeria"></div>
+      </section>
+    </div>
+
+    <div id="secao-produtos">
+      <section class="produtos" id="produtos">
+        <div
+          class="produto"
+          data-images='["src/pom.jpeg","src/pom1.jpeg","src/pom2.jpeg","src/pom3.jpeg"]'
+        >
+          <img src="src/pom.jpeg" />
+          <h3>Pompompurin</h3>
+          <p>Delicado e leve</p>
+          <span class="preco">R$ 20,00</span>
+          <div class="miniaturas"></div>
+
+          <button>Adicionar ao carrinho</button>
         </div>
 
-        <div id="secao-produtos">
-            <section class="produtos" id="produtos">
-                <div
-                    class="produto"
-                    data-images='["src/brinco1.jpeg","src/brinco2.jpeg","src/brinco3.jpeg","src/brinco4.jpeg","src/brinco5.jpeg"]'
-                >
-                    <img src="src/brinco1.jpeg" />
-                    <h3>Brinco Flor de crochê</h3>
-                    <p>Delicado e leve</p>
-                    <select class="variacao">
-                        <option value="10">P - R$ 10,00</option>
-                        <option value="17">G - R$ 17,00</option>
-                    </select>
-                    <div class="miniaturas"></div>
+        <div
+          class="produto"
+          data-images='["src/brinco1.jpeg","src/brinco2.jpeg","src/brinco3.jpeg","src/brinco4.jpeg","src/brinco5.jpeg"]'
+        >
+          <img src="src/brinco1.jpeg" />
+          <h3>Brinco Flor de crochê</h3>
+          <p>Delicado e leve</p>
+          <select class="variacao">
+            <option value="10">P - R$ 10,00</option>
+            <option value="17">G - R$ 17,00</option>
+          </select>
+          <div class="miniaturas"></div>
 
-                    <button>Adicionar ao carrinho</button>
-                </div>
-
-                <div class="produto">
-                    <img
-                        loading="lazy"
-                        src="src/gb.jpeg"
-                        data-full="src/gb.jpeg"
-                        onerror="
-                            this.src =
-                                'https://via.placeholder.com/300?text=Sem+Imagem'
-                        "
-                    />
-                    <h3>Gato bola</h3>
-                    <p>8 cm de altura, 10 cm de largura</p>
-                    <span class="preco">R$ 40,00</span>
-                    <button>Adicionar ao carrinho</button>
-                </div>
-
-                <div class="produto">
-                    <img
-                        loading="lazy"
-                        src="src/up.jpeg"
-                        data-full="src/up.jpeg"
-                        onerror="
-                            this.src =
-                                'https://via.placeholder.com/300?text=Sem+Imagem'
-                        "
-                    />
-                    <h3>Ursinho de crochê</h3>
-                    <p>12,5 cm</p>
-                    <span class="preco">R$ 40,00</span>
-                    <button>Adicionar ao carrinho</button>
-                </div>
-
-                <div class="produto">
-                    <img
-                        loading="lazy"
-                        src="src/Duck.jpeg"
-                        data-full="src/Duck.jpeg"
-                        onerror="
-                            this.src =
-                                'https://via.placeholder.com/300?text=Sem+Imagem'
-                        "
-                    />
-                    <h3>Chaveiro de patinho</h3>
-                    <p>8 cm</p>
-                    <span class="preco">R$ 15,00</span>
-                    <button>Adicionar ao carrinho</button>
-                </div>
-
-                <div class="produto">
-                    <img
-                        loading="lazy"
-                        src="src/snoopy.jpeg"
-                        data-full="src/snoopy.jpeg"
-                        onerror="
-                            this.src =
-                                'https://via.placeholder.com/300?text=Sem+Imagem'
-                        "
-                    />
-                    <h3>Snoopy</h3>
-                    <p>8,5 cm</p>
-                    <select class="variacao">
-                        <option value="20">Normal - R$ 20,00</option>
-                        <option value="25">Piloto - R$ 25,00</option>
-                    </select>
-                    <button>Adicionar ao carrinho</button>
-                </div>
-                <div class="produto">
-                    <img
-                        loading="lazy"
-                        src="src/ha.jpeg"
-                        data-full="src/ha.jpeg"
-                        onerror="
-                            this.src =
-                                'https://via.placeholder.com/300?text=Sem+Imagem'
-                        "
-                    />
-                    <h3>Homem aranha</h3>
-                    <p>8 cm</p>
-                    <span class="preco">R$ 25,00</span>
-                    <button>Adicionar ao carrinho</button>
-                </div>
-            </section>
-
-            <section class="frete">
-                <h2>Calcular Frete</h2>
-                <div class="frete-box">
-                    <input
-                        type="text"
-                        id="cep"
-                        placeholder="Digite seu CEP"
-                        maxlength="9"
-                    />
-                    <button id="btn-frete">Calcular</button>
-                </div>
-                <p id="frete-resultado"></p>
-            </section>
+          <button>Adicionar ao carrinho</button>
         </div>
 
-        <section class="avaliacoes" id="avaliacoes">
-            <h2>Avaliações</h2>
-            <div class="avaliacoes-grid">
-                <div class="avaliacao">
-                    <p>"Produto lindo e bem feito."</p>
-                    <span>★★★★★</span>
-                    <strong>Cliente</strong>
-                </div>
-                <div class="avaliacao">
-                    <p>"Entrega rápida e ótimo acabamento."</p>
-                    <span>★★★★★</span>
-                    <strong>Cliente</strong>
-                </div>
-            </div>
-        </section>
-
-        <section class="instagram">
-            <h2>Instagram</h2>
-            <p>Veja mais peças e novidades.</p>
-            <a
-                class="btn-instagram"
-                href="https://www.instagram.com/pontinhosda_manu?igsh=MW0zdXdidGhiMHlrYQ=="
-                target="_blank"
-            >
-                <i class="fa-brands fa-instagram"></i> Abrir Instagram
-            </a>
-        </section>
-
-        <footer>
-            <p>© 2026 Pontinhos da Manu</p>
-            <p>
-                Desenvolvido por
-                <a
-                    href="https://github.com/kmdev-cmd"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >kmdev</a
-                >
-            </p>
-        </footer>
-
-        <button id="topo">↑</button>
-
-        <div class="carrinho" id="carrinho">
-            <h2>Carrinho</h2>
-            <div id="cart-items"></div>
-            <p class="total">Total: R$ <span id="cart-total">0</span></p>
-            <button id="finalizar">Finalizar pedido</button>
-            <button id="fechar-carrinho">Fechar</button>
+        <div class="produto">
+          <img
+            loading="lazy"
+            src="src/gb.jpeg"
+            data-full="src/gb.jpeg"
+            onerror="
+              this.src = 'https://via.placeholder.com/300?text=Sem+Imagem'
+            "
+          />
+          <h3>Gato bola</h3>
+          <p>8 cm de altura, 10 cm de largura</p>
+          <span class="preco">R$ 40,00</span>
+          <button>Adicionar ao carrinho</button>
         </div>
 
-        <div class="lightbox" id="lightbox"><img src="" alt="Produto" /></div>
+        <div class="produto">
+          <img
+            loading="lazy"
+            src="src/up.jpeg"
+            data-full="src/up.jpeg"
+            onerror="
+              this.src = 'https://via.placeholder.com/300?text=Sem+Imagem'
+            "
+          />
+          <h3>Ursinho de crochê</h3>
+          <p>12,5 cm</p>
+          <span class="preco">R$ 40,00</span>
+          <button>Adicionar ao carrinho</button>
+        </div>
 
-        <script src="produtos.js"></script>
-    </body>
+        <div class="produto">
+          <img
+            loading="lazy"
+            src="src/Duck.jpeg"
+            data-full="src/Duck.jpeg"
+            onerror="
+              this.src = 'https://via.placeholder.com/300?text=Sem+Imagem'
+            "
+          />
+          <h3>Chaveiro de patinho</h3>
+          <p>8 cm</p>
+          <span class="preco">R$ 15,00</span>
+          <button>Adicionar ao carrinho</button>
+        </div>
+
+        <div
+          class="produto"
+          data-images='["src/snoopy.jpeg","src/snoopyp.jpeg"]'
+        >
+          <img src="src/snoopy.jpeg" />
+          <h3>Snoopy</h3>
+          <p>8,5 cm</p>
+
+          <select class="variacao">
+            <option value="20">Normal - R$ 20,00</option>
+            <option value="25">Piloto - R$ 25,00</option>
+          </select>
+          <div class="miniaturas"></div>
+          <button>Adicionar ao carrinho</button>
+        </div>
+
+        <div class="produto">
+          <img
+            loading="lazy"
+            src="src/ha.jpeg"
+            data-full="src/ha.jpeg"
+            onerror="
+              this.src = 'https://via.placeholder.com/300?text=Sem+Imagem'
+            "
+          />
+          <h3>Homem aranha</h3>
+          <p>8 cm</p>
+          <span class="preco">R$ 25,00</span>
+          <button>Adicionar ao carrinho</button>
+        </div>
+      </section>
+
+      <section class="frete">
+        <h2>Calcular Frete</h2>
+        <div class="frete-box">
+          <input
+            type="text"
+            id="cep"
+            placeholder="Digite seu CEP"
+            maxlength="9"
+          />
+          <button id="btn-frete">Calcular</button>
+        </div>
+        <p id="frete-resultado"></p>
+      </section>
+    </div>
+
+    <section class="avaliacoes" id="avaliacoes">
+      <h2>Avaliações</h2>
+      <div class="avaliacoes-grid">
+        <div class="avaliacao">
+          <p>"Produto lindo e bem feito."</p>
+          <span>★★★★★</span>
+          <strong>Cliente</strong>
+        </div>
+        <div class="avaliacao">
+          <p>"Entrega rápida e ótimo acabamento."</p>
+          <span>★★★★★</span>
+          <strong>Cliente</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="instagram">
+      <h2>Instagram</h2>
+      <p>Veja mais peças e novidades.</p>
+      <a
+        class="btn-instagram"
+        href="https://www.instagram.com/pontinhosda_manu?igsh=MW0zdXdidGhiMHlrYQ=="
+        target="_blank"
+      >
+        <i class="fa-brands fa-instagram"></i> Abrir Instagram
+      </a>
+    </section>
+
+    <footer>
+      <p>© 2026 Pontinhos da Manu</p>
+      <p>
+        Desenvolvido por
+        <a
+          href="https://github.com/kmdev-cmd"
+          target="_blank"
+          rel="noopener noreferrer"
+          >kmdev</a
+        >
+      </p>
+    </footer>
+
+    <button id="topo">↑</button>
+
+    <div class="carrinho" id="carrinho">
+      <h2>Carrinho</h2>
+      <div id="cart-items"></div>
+      <p class="total">Total: R$ <span id="cart-total">0</span></p>
+      <button id="finalizar">Finalizar pedido</button>
+      <button id="fechar-carrinho">Fechar</button>
+    </div>
+
+    <div class="lightbox" id="lightbox"><img src="" alt="Produto" /></div>
+
+    <script src="produtos.js"></script>
+  </body>
 </html>
