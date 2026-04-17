@@ -94,7 +94,7 @@ body {
     #d8bfae 0 6px,
     transparent 6px 12px
   );
-  --webkit-mask:
+  -webkit-mask:
     linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
